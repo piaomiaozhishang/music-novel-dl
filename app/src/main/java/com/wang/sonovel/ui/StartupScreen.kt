@@ -15,8 +15,8 @@ fun StartupScreen(error: String?, onRetry: () -> Unit) {
     Surface(Modifier.fillMaxSize()) {
         Column(Modifier.fillMaxSize().safeDrawingPadding().padding(32.dp),
             verticalArrangement=Arrangement.Center, horizontalAlignment=Alignment.CenterHorizontally) {
-            Image(painterResource(R.drawable.ic_launcher_foreground), null, Modifier.size(112.dp))
-            Text("音阅", style=MaterialTheme.typography.headlineMedium)
+            Image(painterResource(R.drawable.app_logo), null, Modifier.size(112.dp))
+            Text("书歌", style=MaterialTheme.typography.headlineMedium)
             Spacer(Modifier.height(20.dp))
             if(error == null) {
                 CircularProgressIndicator(Modifier.size(24.dp), strokeWidth=2.dp)

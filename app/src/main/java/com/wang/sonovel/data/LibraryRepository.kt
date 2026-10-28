@@ -31,7 +31,7 @@ data class LocalBook(
 )
 
 /**
- * 已下载书籍：保存在应用私有目录 files/books，并可复制到公共目录 Download/SoNovel
+ * 已下载书籍：保存在应用私有目录 files/books，并可复制到公共目录 Download/书歌
  */
 class LibraryRepository(private val context: Context) {
     val booksDir = File(context.filesDir, "books").apply { mkdirs() }
@@ -191,11 +191,11 @@ class LibraryRepository(private val context: Context) {
     /** 需要存储权限才能写公共目录（仅 Android 9 及以下） */
     val needsLegacyPermission: Boolean get() = Build.VERSION.SDK_INT < Build.VERSION_CODES.Q
 
-    /** 复制到 公共下载目录/SoNovel，返回可读路径 */
+    /** 复制到 公共下载目录/书歌，返回可读路径 */
     fun copyToPublic(file: File): String {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             val resolver = context.contentResolver
-            val relative = Environment.DIRECTORY_DOWNLOADS + "/SoNovel/"
+            val relative = Environment.DIRECTORY_DOWNLOADS + "/书歌/"
             // 删除本应用之前写入的同名文件，避免生成 “xxx (1).epub”
             runCatching {
                 resolver.delete(
@@ -216,10 +216,10 @@ class LibraryRepository(private val context: Context) {
             values.clear()
             values.put(MediaStore.MediaColumns.IS_PENDING, 0)
             resolver.update(uri, values, null, null)
-            return "下载/SoNovel/${file.name}"
+            return "下载/书歌/${file.name}"
         } else {
             @Suppress("DEPRECATION")
-            val dir = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "SoNovel")
+            val dir = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "书歌")
             dir.mkdirs()
             val target = File(dir, file.name)
             file.copyTo(target, overwrite = true)

@@ -116,7 +116,7 @@ fun DiscoverScreen(onOpenBook: (SearchResult)->Unit,onBatch:()->Unit,onLink:()->
         musicVm.query(word); musicVm.search()
     }
     Column(Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.statusBars)) {
-        MediaHeader("音阅","读一段故事，听一首歌") {
+        MediaHeader("书歌","读一段故事，听一首歌") {
             IconButton(onLink) { Icon(Icons.Outlined.Link,"打开书籍链接") }
             IconButton(onBatch) { Icon(Icons.Outlined.PlaylistAdd,"批量下载小说") }
         }

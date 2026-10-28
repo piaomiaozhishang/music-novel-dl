@@ -202,7 +202,7 @@ fun LibraryScreen(onRead: (java.io.File) -> Unit) {
     confirmDelete?.let { b ->
         ConfirmDialog(
             title = "删除《${b.bookName}》？",
-            text = "将从书架删除该文件（导入时的原文件、已保存到“下载/SoNovel”的副本不受影响）。",
+            text = "将从书架删除该文件（导入时的原文件、已保存到“下载/书歌”的副本不受影响）。",
             confirm = "删除",
             onDismiss = { confirmDelete = null },
             onConfirm = { g.progress.clear(b.file); g.library.delete(b) },
@@ -322,7 +322,7 @@ internal fun BookRow(
                 DropdownMenuItem(text = { Text("阅读") }, leadingIcon = { Icon(Icons.AutoMirrored.Outlined.MenuBook, null) }, onClick = { menu = false; onOpen() })
                 DropdownMenuItem(text = { Text("用其他应用打开") }, leadingIcon = { Icon(Icons.Outlined.OpenInNew, null) }, onClick = { menu = false; onOpenExternal() })
                 DropdownMenuItem(text = { Text("分享") }, leadingIcon = { Icon(Icons.Outlined.Share, null) }, onClick = { menu = false; onShare() })
-                DropdownMenuItem(text = { Text("保存到 下载/SoNovel") }, leadingIcon = { Icon(Icons.Outlined.SaveAlt, null) }, onClick = { menu = false; onExport() })
+                DropdownMenuItem(text = { Text("保存到 下载/书歌") }, leadingIcon = { Icon(Icons.Outlined.SaveAlt, null) }, onClick = { menu = false; onExport() })
                 HorizontalDivider()
                 DropdownMenuItem(
                     text = { Text("删除", color = MaterialTheme.colorScheme.error) },

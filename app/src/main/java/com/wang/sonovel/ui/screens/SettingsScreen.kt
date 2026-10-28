@@ -183,7 +183,7 @@ fun SettingsScreen(onAbout: () -> Unit, onReferences: () -> Unit = {}, onSources
         SettingItem("TXT 编码", s.txtEncoding + if (s.txtEncoding == "GBK") "（兼容旧设备）" else "", Icons.Outlined.TextFields, onClick = {
             dialog = SettingDialog.Choice("TXT 编码", listOf("UTF-8", "GBK"), s.txtEncoding, { it }) { v -> set { it.copy(txtEncoding = v) } }
         })
-        SwitchItem("保存副本到 下载/SoNovel", "下载完成后自动复制到公共下载目录，方便其他应用访问", s.saveToPublic, Icons.Outlined.FolderOpen) { v ->
+        SwitchItem("保存副本到 下载/书歌", "下载完成后自动复制到公共下载目录，方便其他应用访问", s.saveToPublic, Icons.Outlined.FolderOpen) { v ->
             set { it.copy(saveToPublic = v) }
         }
         SwitchItem("获取高清封面", "从起点、纵横、七猫匹配更清晰的封面", s.fetchBetterCover, Icons.Outlined.Image) { v ->
@@ -315,12 +315,12 @@ fun AboutScreen(onBack: () -> Unit) {
         ) {
             Spacer(Modifier.height(16.dp))
             Image(
-                painterResource(R.drawable.ic_launcher_foreground), null,
+                painterResource(R.drawable.app_logo), null,
                 Modifier.size(88.dp).clip(RoundedCornerShape(22.dp))
                     .background(androidx.compose.ui.graphics.Color(0xFF1F6F5C)),
             )
             Spacer(Modifier.height(12.dp))
-            Text("音阅聚合", style = MaterialTheme.typography.headlineMedium)
+            Text("书歌", style = MaterialTheme.typography.headlineMedium)
             Text("版本 ${BuildConfig.VERSION_NAME}", color = MaterialTheme.colorScheme.onSurfaceVariant)
             Spacer(Modifier.height(20.dp))
             Card(
@@ -329,7 +329,7 @@ fun AboutScreen(onBack: () -> Unit) {
             ) {
                 Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(
-                        "音阅将小说与音乐整合为共同的发现、下载、收藏和来源管理。支持 B 站音轨、第三方源接口，以及阅读书源导入。音乐文件可内嵌歌词与封面。项目遵循 AGPL-3.0 开源许可。",
+                        "书歌将小说与音乐整合为共同的发现、下载、收藏和来源管理。支持 B 站音轨、第三方源接口，以及阅读书源导入。音乐文件可内嵌歌词与封面。项目遵循 AGPL-3.0 开源许可。",
                         style = MaterialTheme.typography.bodyMedium,
                     )
                     Text(

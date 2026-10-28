@@ -225,7 +225,7 @@ fun SearchScreen(
         // 标题栏
         Row(Modifier.fillMaxWidth().padding(start = 20.dp, end = 8.dp, top = 8.dp), verticalAlignment = Alignment.CenterVertically) {
             Column(Modifier.weight(1f)) {
-                Text("音阅聚合", style = MaterialTheme.typography.headlineMedium)
+                Text("书歌", style = MaterialTheme.typography.headlineMedium)
                 Text(
                     "已开启 ${searchable.size} 个可搜索书源",
                     style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,

@@ -49,7 +49,7 @@ class MusicPlaybackService : Service(), AudioManager.OnAudioFocusChangeListener 
         super.onCreate()
         handler.post(ticker)
         audio = getSystemService(Context.AUDIO_SERVICE) as AudioManager
-        session = MediaSession(this, "音阅聚合").apply {
+        session = MediaSession(this, "书歌").apply {
             setCallback(object : MediaSession.Callback() {
                 override fun onPlay() { resume() }
                 override fun onPause() { pause() }

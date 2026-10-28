@@ -224,7 +224,7 @@ $navPoints  </navMap>
     <dc:creator id="creator">$author</dc:creator>
     <dc:language>zh</dc:language>
     <dc:publisher>so-novel</dc:publisher>
-    <dc:rights>本电子书由 So Novel 制作生成，仅供交流使用，不得用于商业用途。</dc:rights>$desc
+    <dc:rights>本电子书由 书歌 制作生成，仅供交流使用，不得用于商业用途。</dc:rights>$desc
     <meta property="dcterms:modified">$date</meta>
     ${if (cover != null) "<meta name=\"cover\" content=\"cover-image\"/>" else ""}
   </metadata>
