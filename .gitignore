@@ -1,0 +1,33 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+.kotlin
+/.idea
+# 签名文件
+*.jks
+*.keystore
+keystore.properties
+/app/src/androidTest/assets/private-samples/
+
+# Public repository excludes private providers and generated distributions.
+**/build/
+*.apk
+*.aab
+*.zip
+*.log
+app/src/main/java/com/wang/sonovel/music/KuwoSource.kt
+app/src/main/java/com/wang/sonovel/music/KuwoRequestEncoder.kt
+app/src/test/java/com/wang/sonovel/music/KuwoSourceTest.kt
+app/src/androidTest/java/com/wang/sonovel/MusicLiveSourceTest.kt

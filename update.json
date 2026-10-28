@@ -1,0 +1,7 @@
+{
+  "versionCode": 6,
+  "versionName": "0.3.3",
+  "forceUpdate": false,
+  "downloadUrl": "https://pan.quark.cn/s/347cdbefc6bb",
+  "updateMessage": "优化启动速度；首页介绍可关闭；小说部分章节失败可导出已下载内容，支持保存进度与重试补全。"
+}
